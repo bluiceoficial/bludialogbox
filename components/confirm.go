@@ -34,8 +34,8 @@ func NewConfirm(a fyne.App, title, message string, buttons []string, OnResult fu
 	lblMessage.Wrapping = fyne.TextWrapWord
 
 	flow.AddColumn(lblIcon, lblMessage)
-	flow.SetResize(lblIcon, fyne.NewSize(79, lblIcon.MinSize().Height + 57))
-	flow.SetMove(lblIcon, fyne.NewPos(12,7))
+	flow.Resize(lblIcon, 79, lblIcon.MinSize().Height + 57)
+	flow.Move(lblIcon, 12,7)
 
 	var btns []fyne.CanvasObject
 	for i, btn := range buttons {

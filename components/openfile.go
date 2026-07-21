@@ -192,13 +192,13 @@ func (d *FileDialogOpen) showOpenFile() {
 
 	// LAYOUT
 	flow.AddColumn(btnBack, container.NewVBox(pathLabel, search))
-	flow.SetResize(btnBack, fyne.NewSize(68, 79))
+	flow.Resize(btnBack, 68, 79)
 
 	flow.AddRow(list)
 	flow.AddRow(btnOpen)
 
 	controls.OnResize(win, func(size fyne.Size) {
-		flow.SetResize(list, fyne.NewSize(size.Width, size.Height-137))
+		flow.Resize(list, size.Width, size.Height-137)
 	})
 
 	win.Canvas().Overlays().Add(flow.Container)

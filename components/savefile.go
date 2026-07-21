@@ -177,18 +177,18 @@ func (d *SaveDialogOpen) showSaveFile() {
 
 	// LAYOUT
 	flow.AddColumn(btnBack, container.NewVBox(pathLabel, search))
-	flow.SetResize(btnBack, fyne.NewSize(68, 79))
+	flow.Resize(btnBack, 68, 79)
 
 	flow.AddRow(list)
 
 	flow.AddColumn(
 		txtFilename, btnSave,
 	)
-	flow.SetResize(btnSave, fyne.NewSize(100, 38))
+	flow.Resize(btnSave, 100, 38)
 
 	controls.OnResize(win, func(size fyne.Size) {
 		//fmt.Printf("resize: %.0fx%.0f\n", size.Width, size.Height)
-		flow.SetResize(list, fyne.NewSize(size.Width, size.Height-137))
+		flow.Resize(list, size.Width, size.Height-137)
 	})
 
 	win.Canvas().Overlays().Add(flow.Container)
